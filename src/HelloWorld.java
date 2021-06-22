@@ -6,6 +6,7 @@ public class HelloWorld {
     //        System.out.println("Hello, World!");
     ////        sout = shorthand for System.out.println();
     //        int myFavoriteNumber = 10;
+
     //        System.out.println(myFavoriteNumber);
     //        String myString = "Hey, this is my string";
     //        int myString2 = 1;
@@ -16,6 +17,7 @@ public class HelloWorld {
     //        int x = 5;
     //        System.out.println(x++);
     //        System.out.println(x);
+
 //        int x = 5;
 //        System.out.println(++x);
 //        System.out.println(x);
@@ -42,7 +44,8 @@ public class HelloWorld {
 //        y -= x;
 
 
-        byte myByte = 128;
-        System.out.println(myByte);
+//        byte myByte = 128;
+//        System.out.println(myByte);
+
     }
 }
