@@ -57,5 +57,23 @@ public class ControlFlowExercises  {
 //
 //
 //        }
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter your grade 0-100");
+        int grade = sc.nextInt();
+        if ((grade <= 100) && (grade >= 88)){
+            System.out.printf("Your grade of %s results in an A", grade);
+        }
+        if ((grade <= 87) && (grade >= 80)){
+            System.out.printf("Your grade of %s results in an B", grade);
+        }
+        if ((grade <= 79) && (grade >= 67)){
+            System.out.printf("Your grade of %s results in an C", grade);
+        }
+        if ((grade <= 66) && (grade >= 60)){
+            System.out.printf("Your grade of %s results in an D", grade);
+        }
+        if ((grade <= 59) && (grade >= 0)){
+            System.out.printf("Your grade of %s results in an F", grade);
+        }
 }
 }
