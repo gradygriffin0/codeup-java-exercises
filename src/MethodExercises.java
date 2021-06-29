@@ -13,9 +13,11 @@ public class MethodExercises {
 //
 //        System.out.println(integerModulus(2, 0));
         Scanner sc = new Scanner(System.in);
-        System.out.println("Enter a number between 1 and 10");
-        int userInput = sc.nextInt();
-        getInteger(1, 10, userInput);
+//        System.out.println("Enter an integer between 1 and 10");
+//        System.out.println(getInteger(1, 10, sc));
+        System.out.println("Enter an integer between 1 and 10");
+        System.out.println(factorial(sc));
+
     }
 
     //1
@@ -44,10 +46,37 @@ public class MethodExercises {
     }
 
     //    2
-    public static int getInteger(int min, int max, int scanner){
+    public static int getInteger(int min, int max, Scanner scanner){
 
+        int scanInput = scanner.nextInt();
 
+        if ((scanInput < min) || (scanInput > max)) {
+            System.out.println("Error, number not an integer or within range.");
+            System.out.println("Enter a number between 1 and 10");
+            return getInteger(min, max, scanner);
 
+        } else {
+            return scanInput;
+        }
+
+    }
+    public static String factorial(Scanner scanner){
+
+        String ultimate = "";
+        int input = getInteger(1, 10, scanner);
+        int total = 1;
+        System.out.println(input);
+        for(int i = 1; i <= input; i++){
+                total *= i;
+            if (i == input){
+                ultimate += i + " ";
+                ultimate += "= " + total;
+            } else {
+                ultimate += i + " x ";
+            }
+        }
+
+        return ultimate;
     }
 
 
