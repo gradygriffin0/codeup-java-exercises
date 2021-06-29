@@ -76,7 +76,7 @@ public class MethodExercises {
             }
         }
 
-        return ultimate;
+        return  input + "!" + " = " + ultimate;
     }
 
 
