@@ -13,10 +13,15 @@ public class MethodExercises {
 //
 //        System.out.println(integerModulus(2, 0));
         Scanner sc = new Scanner(System.in);
+
 //        System.out.println("Enter an integer between 1 and 10");
 //        System.out.println(getInteger(1, 10, sc));
-        System.out.println("Enter an integer between 1 and 10");
-        System.out.println(factorial(sc));
+
+//        System.out.println("Enter an integer between 1 and 10");
+//        System.out.println(factorial(sc));
+
+//        System.out.println("Roll the dice; enter the sides of your two dice to roll...");
+//        System.out.println(diceRoll(sc.nextInt(), sc.nextInt()));
 
     }
 
@@ -46,14 +51,14 @@ public class MethodExercises {
     }
 
     //    2
-    public static int getInteger(int min, int max, Scanner scanner){
+    public static int getInteger(int min, int max, Scanner sc){
 
-        int scanInput = scanner.nextInt();
+        int scanInput = sc.nextInt();
 
-        if ((scanInput < min) || (scanInput > max)) {
+        if (scanInput < min || scanInput > max) {
             System.out.println("Error, number not an integer or within range.");
             System.out.println("Enter a number between 1 and 10");
-            return getInteger(min, max, scanner);
+            return getInteger(min, max, sc);
 
         } else {
             return scanInput;
@@ -64,7 +69,7 @@ public class MethodExercises {
 
         String ultimate = "";
         int input = getInteger(1, 10, scanner);
-        int total = 1;
+        long total = 1;
         System.out.println(input);
         for(int i = 1; i <= input; i++){
                 total *= i;
@@ -77,6 +82,18 @@ public class MethodExercises {
         }
 
         return  input + "!" + " = " + ultimate;
+    }
+
+    public static String diceRoll(int sidesOfFirst, int sidesOfSecond){
+
+        double chance1 = (double) 1 / sidesOfFirst;
+        double chance2 = (double) 1 / sidesOfSecond;
+
+        return "Chance of first rolling any given side = " + chance1 + "\n" +
+                "Chance of first rolling any given side = " + chance2 + "\n" +
+                "Chance both die rolling the same side = " + chance1 * chance2 + "\n";
+
+
     }
 
 
