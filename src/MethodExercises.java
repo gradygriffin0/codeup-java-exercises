@@ -17,9 +17,8 @@ public class MethodExercises {
 //        System.out.println("Enter an integer between 1 and 10");
 //        System.out.println(getInteger(1, 10, sc));
 
-//        System.out.println("Enter an integer between 1 and 10");
-//        System.out.println(factorial(sc));
-
+        System.out.println("Enter an integer between 1 and 10");
+        factorial(sc);
 //        System.out.println("Roll the dice; enter the sides of your two dice to roll...");
 //        System.out.println(diceRoll(sc.nextInt(), sc.nextInt()));
 
@@ -65,24 +64,42 @@ public class MethodExercises {
         }
 
     }
-    public static String factorial(Scanner scanner){
+//    public static String factorial(Scanner scanner){
+//
+//        String ultimate = "";
+//        int input = getInteger(1, 100, scanner);
+//        long total = 1;
+//        System.out.println(input);
+//        for(int i = 1; i <= input; i++){
+//                total *= i;
+//            if (i == input){
+//                ultimate += i + " ";
+//                ultimate += "= " + total;
+//            } else {
+//                ultimate += i + " x ";
+//            }
+//        }
+//
+//        return  input + "!" + " = " + ultimate;
+//    }
+public static void factorial(Scanner scanner){
 
-        String ultimate = "";
-        int input = getInteger(1, 10, scanner);
-        long total = 1;
-        System.out.println(input);
-        for(int i = 1; i <= input; i++){
-                total *= i;
-            if (i == input){
-                ultimate += i + " ";
-                ultimate += "= " + total;
-            } else {
-                ultimate += i + " x ";
-            }
+    String ultimate = "";
+    int input = getInteger(1, 100, scanner);
+    long total = 1;
+    System.out.println(input);
+    for(int i = 1; i <= input; i++){
+        total *= i;
+        if (i == input){
+            ultimate += i + " ";
+        } else {
+            ultimate += i + " x ";
         }
-
-        return  input + "!" + " = " + ultimate;
+        System.out.println(i + "! = " + ultimate + " = " + total);
     }
+
+//    return  input + "!" + " = " + ultimate;
+}
 
     public static String diceRoll(int sidesOfFirst, int sidesOfSecond){
 
