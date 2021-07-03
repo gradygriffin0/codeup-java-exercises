@@ -32,5 +32,16 @@ public class Input {
         return (yes);
     }
 
+    public int getInt(int min, int max){
+        System.out.println("Enter an integer between " + min + " and " + max);
+        int input = scanner.nextInt();
+        while(input < min || input > max){
+            System.out.println("Error not an integer.");
+            System.out.println("Enter an integer between " + min + " and " + max);
+            input = scanner.nextInt();
+        }
+        return input;
+    }
+
 
 }
