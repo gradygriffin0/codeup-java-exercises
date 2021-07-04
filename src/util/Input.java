@@ -5,9 +5,8 @@ import java.util.Scanner;
 
 public class Input {
     public static void main(String[] args) {
-        Input test = new Input();
-        System.out.println(test.getString());
-        System.out.println(test.yesNo());
+
+
     }
 
     private Scanner scanner;
@@ -43,5 +42,15 @@ public class Input {
         return input;
     }
 
+    public double getDouble(int min, int max){
+        System.out.println("Enter a double between " + min + " and " + max);
+        double input = scanner.nextDouble();
+        while(input < min || input > max){
+            System.out.println("Error not a double.");
+            System.out.println("Enter an double between " + min + " and " + max);
+            input = scanner.nextDouble();
+        }
+        return input;
+    }
 
 }
