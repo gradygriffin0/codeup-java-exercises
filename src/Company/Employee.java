@@ -7,7 +7,15 @@ public abstract class Employee {
     protected String salary;
     protected String name;
 
-    public String doWork(){
-        return "I am working";
-    }
+
+
+//    non abstract method, has definition, no abstract keyword...
+    //    public String doWork(){
+    //        return "I am working";
+    //    }
+
+//    abstact method
+//
+    public abstract String doWork();
+
 }

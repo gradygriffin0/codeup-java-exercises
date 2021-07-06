@@ -5,4 +5,8 @@ public class Manager extends Employee{
         Manager mngr = new Manager();
         System.out.println(mngr.doWork());
     }
+
+    public String doWork() {
+        return "manging employees";
+    }
 }
