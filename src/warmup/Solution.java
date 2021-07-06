@@ -5,5 +5,9 @@ public class Solution {
         Parent parent1 = new Parent();
         parent1.parentPrint();
 
+        Child child1 = new Child();
+        child1.childPrint();
+        child1.parentPrint();
+
     }
 }
