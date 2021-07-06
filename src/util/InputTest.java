@@ -12,6 +12,7 @@ public class InputTest {
 //        System.out.println(test.getInt(1, 100));
         System.out.println(test.getDouble(1, 100));
 
+
     }
 
 
