@@ -13,10 +13,15 @@ public class ShapesTest {
 //        System.out.println(box2.getPerimeter());
 //        System.out.println(box2.getArea());
 
-        Measurable myShape1 = new SquareTwo(5);
+        Shape myShape1 = new SquareTwo(5);
+
         System.out.println(myShape1.getArea());
-        Measurable myShape2 = new RectangleTwo(10, 20);
-        System.out.println(myShape2.getPerimeter());
+        System.out.println(myShape1.getPerimeter());
+
+        myShape1 = new RectangleTwo(10, 20);
+
+        System.out.println(myShape1.getArea());
+        System.out.println(myShape1.getPerimeter());
     }
 
 }
