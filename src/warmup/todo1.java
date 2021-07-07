@@ -15,7 +15,6 @@ public class todo1 {
         }
 
         for (int i = 0; i < countedString.length(); i++){
-            System.out.println(arr[i]);
             if(Character.isUpperCase(arr[i])){
                 Counter.count++;
             }

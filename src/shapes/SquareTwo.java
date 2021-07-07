@@ -5,9 +5,9 @@ public class SquareTwo extends Quadrilateral{
     protected double side;
 
     public SquareTwo(double side) {
+        super(side, side);
         this.side = side;
-        this.length = side;
-        this.width = side;
+
     }
 
     @Override
