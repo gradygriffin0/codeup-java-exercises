@@ -17,18 +17,21 @@ public class Input {
     }
 
     public String getString() {
-        System.out.println("enter a string: ");
+//        System.out.println("enter a string: ");
         return scanner.nextLine();
     }
 
     public boolean yesNo() {
-        System.out.println("Is it yes or not yes?: ");
-        boolean yes = false;
+
         String value = scanner.next();
         if ((value.equalsIgnoreCase("yes")) || (value.equalsIgnoreCase("y"))|| (value.equalsIgnoreCase("yeah")) || (value.equalsIgnoreCase("yea"))) {
-            yes = true;
+            return true;
+        } else if (value.equalsIgnoreCase("no") || value.equalsIgnoreCase("n")){
+            return false
         }
-        return (yes);
+        else {
+            return yesNo();
+        }
     }
 
     public int getInt(int min, int max){
