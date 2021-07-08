@@ -34,7 +34,34 @@ public class MoviesApplication {
         }
 
         if (choice == 2){
-            viewAllAnimated();
+            viewAllCategory("animated");
+        }
+
+        if (choice == 3){
+            viewAllCategory("drama");
+        }
+
+        if (choice == 4){
+            viewAllCategory("horror");
+        }
+
+        if (choice == 5){
+            viewAllCategory("scifi");
+        }
+
+        System.out.println("\n---------------------------");
+        System.out.println("0 - Exit");
+        System.out.println("1 - Return To Home");
+        System.out.println("---------------------------\n");
+        System.out.printf("Enter your choice: ");
+        int choice2 = choice(sc);
+
+        if (choice2 == 0){
+            return;
+        }
+
+        if (choice2 == 1){
+            home(sc);
         }
 
 
@@ -56,7 +83,7 @@ public class MoviesApplication {
         }
     }
 
-    public static void viewAllAnimated(String category){
+    public static void viewAllCategory(String category){
 
         Movie[] movies = MoviesArray.findAll();
 
@@ -67,24 +94,28 @@ public class MoviesApplication {
             }
         }
 
-        Movie[] animated = new Movie[count];
+        Movie[] categoryArr = new Movie[count];
 
         int maxIndex = --count;
         for(Movie movie: movies){
 
             if (movie.getCategory().equalsIgnoreCase(category)){
-                animated[maxIndex] = movie;
+                categoryArr[maxIndex] = movie;
                 maxIndex--;
             }
             if (count < 0)
                 return;
 
         }
+        for(Movie movie: categoryArr){
+            System.out.println(movie.getName() + " --- " + movie.getCategory().toUpperCase());
+        }
+
 
 
 //        for (int i = 0, j = 0; i < count; i++) {
-//            System.out.println(Arrays.toString(animated));
-//            animated[i] = movies[i];
+//            System.out.println(Arrays.toString(category));
+//            category[i] = movies[i];
 //        }
     }
 
