@@ -27,7 +27,7 @@ public class Input {
         if ((value.equalsIgnoreCase("yes")) || (value.equalsIgnoreCase("y"))|| (value.equalsIgnoreCase("yeah")) || (value.equalsIgnoreCase("yea"))) {
             return true;
         } else if (value.equalsIgnoreCase("no") || value.equalsIgnoreCase("n")){
-            return false
+            return false;
         }
         else {
             return yesNo();
