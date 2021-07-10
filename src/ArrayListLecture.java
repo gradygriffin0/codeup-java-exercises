@@ -5,5 +5,7 @@ public class ArrayListLecture {
         ArrayList<String> stringArr = new ArrayList<>();
         stringArr.add("Casey");
         System.out.println(stringArr);
+        System.out.println(stringArr.size());
+
     }
 }
