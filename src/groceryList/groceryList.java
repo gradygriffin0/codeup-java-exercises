@@ -11,7 +11,8 @@ public class groceryList {
         System.out.println("-------------------------------");
         System.out.println("           OPTIONS:");
         System.out.println("0 - EXIT ");
-        System.out.println("1 - VIEW CURRENT GROCERY  ");
+        System.out.println("1 - CREATE NEW GROCERY LIST  ");
 
     }
+
 }
