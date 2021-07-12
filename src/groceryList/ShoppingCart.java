@@ -12,7 +12,7 @@ public class ShoppingCart {
         return shoppingCart;
     }
 
-    public void setShoppingCart(Item item, Integer quantity) {
+    public void setShoppingCart(Item item, int quantity) {
         this.shoppingCart.put(item, quantity);
     }
 }

@@ -26,6 +26,21 @@ public class GroceryInput {
                             "6 - CREATE SAMPLE CART");
         chooseGroceryList(choose(6), cart);
     }
+    public static void continueCheck(ShoppingCart cart){
+        System.out.println("Would you like to continue?");
+        System.out.println("0 - No");
+        System.out.println("1 - Yes");
+        switch(choose(2)){
+            case 0:
+                return;
+            case 1:
+                groceryListHome(cart);
+                break;
+        }
+    }
+    public static void viewItemUnsorted(ShoppingCart cart){
+
+    }
 
     public static void chooseGroceryList(int choice, ShoppingCart cart){
         System.out.println(cart);
@@ -33,16 +48,26 @@ public class GroceryInput {
             case 0:
                 return;
             case 1:
-
                 mainMenu();
                 break;
+            case 2:
+                addItem(cart);
+                continueCheck(cart);
+                break;
+            case 3:
+
         }
     }
     public static void addItem(ShoppingCart cart){
         System.out.println("What Item would you like to add?");
-        String input = sc.next();
-        System.out.println("What quantity of " + input + " do you have?");
-        String quantity = sc.next();
+        String name = sc.next();
+        System.out.println("What category is this item?");
+        String category = sc.next();
+        System.out.println("What quantity of " + name + " do you have?");
+        int quantity = sc.nextInt();
+        cart.setShoppingCart(createItem(name,category), quantity);
+
+
     }
     public static Item createItem(String name, String category){
         return new Item (name, category);
