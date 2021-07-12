@@ -41,13 +41,24 @@ public class GroceryInput {
     }
     public static void addSampleCart(ShoppingCart cart){
 
+        cart.setShoppingCart(createItem("Milk", "dairy"), 5);
+        cart.setShoppingCart(createItem("Fish", "produce"), 2);
+        cart.setShoppingCart(createItem("coffee", "beverage"), 1);
+        cart.setShoppingCart(createItem("Steak", "produce"), 2);
+        cart.setShoppingCart(createItem("Orange Juice", "beverage"), 1);
+
+
+
+
     }
     public static void viewItemUnsorted(ShoppingCart cart){
         for (Item item : cart.shoppingCart.keySet()){
 
             System.out.println(item.getName());
             System.out.println(item.getCategory());
-            System.out.println(cart.shoppingCart.values());
+            if(cart.shoppingCart.containsKey(item)){
+                System.out.println(cart.shoppingCart.get(item));
+            }
 
         }
     }
@@ -66,6 +77,10 @@ public class GroceryInput {
                 break;
             case 3:
                 viewItemUnsorted(cart);
+                continueCheck(cart);
+                break;
+            case 4:
+                addSampleCart(cart);
                 continueCheck(cart);
                 break;
 
