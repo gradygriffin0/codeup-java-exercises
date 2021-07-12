@@ -7,7 +7,11 @@ public class groceryList {
 
 
     public static void home(){
-        System.out.println("       GRADY'S GROCERY        ");
-        System.out.println("------------------------------");
+        System.out.println("        GRADY'S GROCERY        ");
+        System.out.println("-------------------------------");
+        System.out.println("           OPTIONS:");
+        System.out.println("0 - EXIT ");
+        System.out.println("1 - VIEW CURRENT GROCERY  ");
+
     }
 }
