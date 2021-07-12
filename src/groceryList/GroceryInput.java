@@ -1,5 +1,6 @@
 package groceryList;
 
+import java.util.HashMap;
 import java.util.Scanner;
 
 public class GroceryInput {
@@ -38,12 +39,21 @@ public class GroceryInput {
                 break;
         }
     }
-    public static void viewItemUnsorted(ShoppingCart cart){
+    public static void addSampleCart(ShoppingCart cart){
 
+    }
+    public static void viewItemUnsorted(ShoppingCart cart){
+        for (Item item : cart.shoppingCart.keySet()){
+
+            System.out.println(item.getName());
+            System.out.println(item.getCategory());
+            System.out.println(cart.shoppingCart.values());
+
+        }
     }
 
     public static void chooseGroceryList(int choice, ShoppingCart cart){
-        System.out.println(cart);
+
         switch(choice){
             case 0:
                 return;
@@ -55,6 +65,9 @@ public class GroceryInput {
                 continueCheck(cart);
                 break;
             case 3:
+                viewItemUnsorted(cart);
+                continueCheck(cart);
+                break;
 
         }
     }
