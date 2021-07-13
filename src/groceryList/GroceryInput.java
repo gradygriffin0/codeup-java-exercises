@@ -54,10 +54,10 @@ public class GroceryInput {
     public static void viewItemUnsorted(ShoppingCart cart){
         for (Item item : cart.shoppingCart.keySet()){
 
-            System.out.println(item.getName());
-            System.out.println(item.getCategory());
+            System.out.print(item.getName() + "   |   ");
+            System.out.print(item.getCategory().toUpperCase() + "   |   ");
             if(cart.shoppingCart.containsKey(item)){
-                System.out.println(cart.shoppingCart.get(item));
+                System.out.println(cart.shoppingCart.get(item) + "x");
             }
 
         }
