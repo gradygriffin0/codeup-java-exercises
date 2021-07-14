@@ -8,6 +8,7 @@ public class ShoppingCart {
          this.shoppingCart = new HashMap<>();
     }
 
+
     public HashMap<Item, Integer> getShoppingCart() {
         return shoppingCart;
     }

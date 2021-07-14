@@ -2,6 +2,7 @@ package groceryList;
 
 import java.util.HashMap;
 import java.util.Scanner;
+import java.util.TreeMap;
 
 public class GroceryInput {
     private static final Scanner sc = new Scanner(System.in);
@@ -48,6 +49,11 @@ public class GroceryInput {
         cart.setShoppingCart(createItem("Orange Juice", "beverage"), 1);
 
 
+
+
+    }
+    public static void viewItemSorted(ShoppingCart cart){
+        TreeMap<Item, Integer> treeMapShoppingCart;
 
 
     }

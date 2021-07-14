@@ -8,7 +8,7 @@ public class quiztest {
         int[] arr1 = new int[]{1,2,3};
         int[] arr2 = new int[]{1,2,3};
         System.out.println(Arrays.equals(arr1, arr2));
-        sortDesc(12345);
+        System.out.println(sortDesc(0112));
     }
 
         public static int sortDesc(final int num) {
@@ -18,14 +18,15 @@ public class quiztest {
             for (int i = 0; i < temp.length(); i++) {
                 newArr[j - 1] = temp.charAt(i) - '0';
                 j--;
-                System.out.println(Arrays.toString(newArr));
             }
-            Integer[] boxedArray = Arrays.stream(newArr).boxed().toArray(Integer[]::new);
+            int result = 0;
+            for (int k = 0; k < newArr.length; k++) {
+                result *= 10;
+                result += newArr[k];
+            }
 
-            List<Integer> list = new ArrayList<>();
 
-            Collections.addAll(list, boxedArray);
 
-            return 0;
+            return result;
         }
     }
