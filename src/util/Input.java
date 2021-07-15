@@ -24,36 +24,55 @@ public class Input {
     public boolean yesNo() {
 
         String value = scanner.next();
-        if ((value.equalsIgnoreCase("yes")) || (value.equalsIgnoreCase("y"))|| (value.equalsIgnoreCase("yeah")) || (value.equalsIgnoreCase("yea"))) {
+        if ((value.equalsIgnoreCase("yes")) || (value.equalsIgnoreCase("y")) || (value.equalsIgnoreCase("yeah")) || (value.equalsIgnoreCase("yea"))) {
             return true;
-        } else if (value.equalsIgnoreCase("no") || value.equalsIgnoreCase("n")){
+        } else if (value.equalsIgnoreCase("no") || value.equalsIgnoreCase("n")) {
             return false;
-        }
-        else {
+        } else {
             return yesNo();
         }
     }
 
-    public int getInt(int min, int max){
+    public int getInt(int min, int max) {
         System.out.println("Enter an integer between " + min + " and " + max);
-        int input = scanner.nextInt();
-        while(input < min || input > max){
-            System.out.println("Error not an integer.");
-            System.out.println("Enter an integer between " + min + " and " + max);
-            input = scanner.nextInt();
+        try {  // .nextInt()
+            int input = Integer.parseInt(getString());
+            if (input > min && input < max) {
+                return input;
+            } else {
+                System.out.println("Not in range");
+                return getInt(min, max);
+            }
+        } catch (Exception e) {
+            System.out.println("Invalid integer");
+            return getInt(min, max);
         }
-        return input;
     }
 
-    public double getDouble(int min, int max){
+    //    public double getDouble(int min, int max){
+//        System.out.println("Enter a double between " + min + " and " + max);
+//        double input = scanner.nextDouble();
+//        while(input < min || input > max){
+//            System.out.println("Error not a double.");
+//            System.out.println("Enter an double between " + min + " and " + max);
+//            input = scanner.nextDouble();
+//        }
+//        return input;
+//    }
+
+    public double getDouble(int min, int max) {
         System.out.println("Enter a double between " + min + " and " + max);
-        double input = scanner.nextDouble();
-        while(input < min || input > max){
-            System.out.println("Error not a double.");
-            System.out.println("Enter an double between " + min + " and " + max);
-            input = scanner.nextDouble();
+        try {  // .nextInt()
+            double input = Double.parseDouble(getString());
+            if (input > min && input < max) {
+                return input;
+            } else {
+                System.out.println("Not in range");
+                return getDouble(min, max);
+            }
+        } catch (Exception e) {
+            System.out.println("Invalid double");
+            return getDouble(min, max);
         }
-        return input;
     }
-
 }
