@@ -21,7 +21,7 @@ public class StringRandomNumber {
       } catch (StringIndexOutOfBoundsException e){
           System.out.println("Random was " + randomInt + "\nString has indexes of " + str.length());
           System.out.println("Error was " + e.getMessage());
-          System.out.println("Rerunning the program: ");
+          System.out.println("Rerunning the program: \n\n");
          return stringPrinter(str);
       }
 
