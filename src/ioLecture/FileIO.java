@@ -4,66 +4,47 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.ArrayList;
+import java.util.List;
+
 
 public class FileIO {
 
     public static void main(String[] args) {
+        init();
 
-        Path path = getPath("src", "ioLecture", "files");
-        path = Paths.get(path.toString(), "files.txt");
 
+    }
+
+    public static void init() {
+        // try create directory
+        Path path = FileDirectoryUtil.getPath("src", "ioLecture", "files");
+        FileDirectoryUtil.tryCreateDirectory(path);
+
+        // try create file in new directory
+        path = Paths.get(path.toString(), "test.txt");
+        FileDirectoryUtil.tryCreateFile(path);
+
+        // print final file path
         System.out.println(path.toAbsolutePath());
 
+        IOUtil.tryPrintContents(path);
+
+        IOUtil.tryWriteToFile(getContent(), path);
+
+        IOUtil.tryPrintContents(path);
+
+
+    }
+    public static List<String> getContent(){
+        List<String> contentToWrite = new ArrayList<String>();
+        contentToWrite.add("String line 1 test");
+        contentToWrite.add("String line 2 test2");
+        contentToWrite.add("String line 3 test3");
+        contentToWrite.add("String line 4 test4");
+    return contentToWrite;
     }
 
 
-    public static Path getPath(String filename) {
-        return Paths.get(filename);
-    }
-
-    public static Path getPath(String parentDirectory, String fileName) {
-        return Paths.get(parentDirectory, fileName);
-    }
-
-    //    with Path.get() =>
-//from furthest out directory, to most inner directory, to file
-    public static Path getPath(String parentDirectory, String childName, String fileName) {
-        return Paths.get(parentDirectory, childName, fileName);
-    }
-
-
-    public static Boolean doesPathExist(Path path) {
-        return Files.exists(path);
-    }
-
-    public static void tryCreateDirectory(Path pathToCreate) {
-
-        if (!doesPathExist(pathToCreate)) {
-            try {
-                Files.createDirectory(pathToCreate);
-            } catch (IOException e) {
-                System.out.println("Couldn't create directory at: ");
-                System.out.println(pathToCreate.toAbsolutePath());
-
-            }
-        } else {
-            System.out.println("Path Exists at " + pathToCreate.toAbsolutePath());
-
-        }
-    }
-    public static void tryCreateFile(Path pathToCreate) {
-
-        if (!doesPathExist(pathToCreate)) {
-            try {
-                Files.createFile(pathToCreate);
-            } catch (IOException e) {
-                System.out.println("Couldn't create file at: ");
-                System.out.println(pathToCreate.toAbsolutePath());
-
-            }
-        } else {
-            System.out.println("Path Exists at " + pathToCreate.toAbsolutePath());
-
-        }
-    }
 }
+
