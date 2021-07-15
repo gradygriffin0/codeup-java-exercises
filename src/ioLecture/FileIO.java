@@ -8,24 +8,26 @@ import java.nio.file.Paths;
 public class FileIO {
 
     public static void main(String[] args) {
-//        System.out.println(getFilePath("src","fileIO","test.txt").toAbsolutePath());
-        System.out.println(doesPathExist(getFilePath("src", "ioLecture", "test.txt")));
-//        tryCreateDirectory(getFilePath("src", "ioLecture", "test.txt"));
-        tryCreateFile(getFilePath("src", "ioLecture", "test1.txt"));
+
+        Path path = getPath("src", "ioLecture", "files");
+        path = Paths.get(path.toString(), "files.txt");
+
+        System.out.println(path.toAbsolutePath());
+
     }
 
 
-    public static Path getFilePath(String filename) {
+    public static Path getPath(String filename) {
         return Paths.get(filename);
     }
 
-    public static Path getFilePath(String parentDirectory, String fileName) {
+    public static Path getPath(String parentDirectory, String fileName) {
         return Paths.get(parentDirectory, fileName);
     }
 
     //    with Path.get() =>
 //from furthest out directory, to most inner directory, to file
-    public static Path getFilePath(String parentDirectory, String childName, String fileName) {
+    public static Path getPath(String parentDirectory, String childName, String fileName) {
         return Paths.get(parentDirectory, childName, fileName);
     }
 
