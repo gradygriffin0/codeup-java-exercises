@@ -9,6 +9,7 @@ public class ShoppingCart {
     }
 
 
+
     public HashMap<Item, Integer> getShoppingCart() {
         return shoppingCart;
     }
