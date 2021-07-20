@@ -7,6 +7,7 @@ package oop;
 //  TO DESCRIBE THAT OBERON INSTANCE.
 
 public class oberon {
+
     private int numStudents;
     private String monthStarted;
     private boolean onZoom;
