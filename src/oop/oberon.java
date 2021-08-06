@@ -8,7 +8,6 @@ package oop;
 
 public class oberon {
 
-
     private int numStudents;
     private String monthStarted;
     private boolean onZoom;
